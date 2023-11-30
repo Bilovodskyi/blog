@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+body {
+    /* background-color: #262039; */
+    background-color: #152128;
+}
+
+.dots-background {
+    --dot-bg: #152128;
+    --dot-size: 1px;
+    --dot-space: 50px;
+
+    background: linear-gradient(
+                90deg,
+                var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+                transparent 1%
+            )
+            center / var(--dot-space) var(--dot-space),
+        linear-gradient(
+                var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+                transparent 1%
+            )
+            center / var(--dot-space) var(--dot-space),
+        white;
+    background-attachment: fixed;
+}
+
+.articleTitle {
+    font-size: 3rem;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    text-align: center;
+}
+
+.articleSubtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.articleList {
+    list-style: circle;
+}
+
+.articleUnderscore {
+    text-decoration: underline;
+}
+
+.articleQuote {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    font-style: italic;
+    font-weight: 500;
+    border-left: 4px solid #777;
+}
+
+.news-card-image {
+    transition: all 300ms ease-in-out;
+}
+
+.news-card:hover .news-card-image {
+    height: 1%;
+    transition: all 300ms ease-in-out;
+}
+
+.news-card:hover h1 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: all 300ms ease-in-out;
+}
+
+.news-card:hover .news-card-date {
+    display: none;
+}
+
+.loading {
+    opacity: 0.8;
+    animation: skeleton-animation 1s linear infinite alternate;
+}
+
+.loading-title {
+    width: 50%;
+    align-self: center;
+    height: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.loading-text {
+    width: 100%;
+    height: 1rem;
+}
+
+.loading-text:last-child {
+    width: 15%;
+}
+
+@keyframes skeleton-animation {
+    0% {
+        background-color: hsl(200, 20%, 90%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 99%);
+    }
+}
+
+.ProseMirror blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid #545454;
+}
+
+.ProseMirror hr {
+    border: none;
+    border-top: 2px solid #545454;
+    margin: 2rem 0;
+}
+
+.ProseMirror ul {
+    padding: 0 1.5rem;
+    list-style: circle;
+}
+
+.ProseMirror ol {
+    padding: 0 1.5rem;
+    list-style: decimal;
+}
+
+.ProseMirror h1 {
+    font-size: 2rem;
+}
+
+.ProseMirror h3 {
+    font-size: 1.5rem;
+}
